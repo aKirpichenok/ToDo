@@ -114,7 +114,7 @@ input[type=checkbox] { display: none; }
     border-radius: 50%;
     margin-right: 6px;
     vertical-align: baseline;
-   
+    cursor: pointer;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -134,6 +134,17 @@ li {
   font-size: 18px;
 }
 
+.remove_todo {
+  float: right;
+  font-size: 36px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.remove_todo:hover {
+  color: red;
+  opacity: 1;
+}
+
 .completed {
   opacity: 0.5;
   text-decoration: line-through;
@@ -145,6 +156,14 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.TodoFooter_items{
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .footer_button:not(:last-child) {
@@ -152,8 +171,19 @@ li {
 }
 .footer_button {
   cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0.7
 }
 
-.footer_button:active {
-  border: 2px solid green;
+.footer_button:hover {
+  border: 2px solid rgb(195, 149, 109,0.5);
+  border-radius: 8px;
+}
+
+.active{
+  border: 2px solid rgb(195, 149, 109,0.5);
+  border-radius: 8px;
+  opacity: 1;
 }

@@ -11,7 +11,7 @@ type TodosState = {
 }
 
 const initialState: TodosState = {
-    list: [{id: '2',title: '1', completed: false}]
+    list: []
 }
 
 const todoSlice = createSlice ({

@@ -27,7 +27,7 @@ const AddTodo: FC = () => {
     }
 
     const handleKeyPress = (e: any) => {
-        if(e.key == 'Enter') {
+        if(e.key === 'Enter') {
             handleAction()
         }
     }

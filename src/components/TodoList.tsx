@@ -3,17 +3,24 @@ import { useAppSelector } from "../hooks/hook";
 import TodoItem from "./TodoItem";
 
 interface TodoListProps {
-    todos: any
+    typeTodos: string
 }
 
 
-const TodoList: FC<TodoListProps> = ({ todos }) => {
-    // const todos = useAppSelector(state => state.todos.list)
+const TodoList: FC<TodoListProps> = ({ typeTodos }) => {
 
+    const todos = useAppSelector(state => state.todos.list)
+
+    const filterTodos = () => {
+        if(typeTodos === 'All') return todos
+        if(typeTodos === 'Active') return todos.filter(todo => todo.completed === false)
+        if(typeTodos === 'Completed') return todos.filter(todo => todo.completed === true)
+
+    }
 
     return (
         <ul>
-            {todos.map((todo: any) => 
+            {filterTodos()?.map((todo: any) => 
             <TodoItem
             key={todo.id}
             {...todo}
