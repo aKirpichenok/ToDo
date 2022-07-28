@@ -10,7 +10,7 @@ interface TodoFooterProps {
 const TodoFooter: FC<TodoFooterProps> = ({ updateType }) => {
     const todos = useAppSelector(state => state.todos.list)
     const dispatch = useAppDispatch()
-    const [active, setActive] = useState('All')
+    const [active, setActive] = useState<string>('All')
 
     const handleClick = (type: string)  => {
         updateType(type)

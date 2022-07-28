@@ -4,7 +4,7 @@ import TodoFooter from "./TodoFooter"
 import TodoList from "./TodoList"
 
 const TodosBlock = () => {
-    const [typeTodos, setTypeTodos] = useState('All')
+    const [typeTodos, setTypeTodos] = useState<string>('All')
     
 
     const updateListTodos = (str: string) => {

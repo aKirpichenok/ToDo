@@ -11,7 +11,6 @@ interface TodoItemProps {
 
 const TodoItem: FC<TodoItemProps> = ({ id, title, completed}) => {
     const dispatch = useAppDispatch()
-    const classTitle = completed ? 'completed' : ''
 
     return (
         <li>
@@ -23,7 +22,7 @@ const TodoItem: FC<TodoItemProps> = ({ id, title, completed}) => {
             />
             <span className="pseudocheckbox"></span>
             </label>
-            <span className={classTitle}>{title}</span>
+            <span className={`${completed ? 'completed' : ''}`}>{title}</span>
             <span className="remove_todo" onClick={() => dispatch(removeTodo(id))}>&times;</span>
         </li>
     )

@@ -1,21 +1,14 @@
-import { FC, useState } from "react"
+import React, { FC, useState } from "react"
 import { useAppDispatch } from "../hooks/hook";
 import { addTodo } from "../store/todoSlice";
-
-// interface AddTodoProps {
-//     value: string;
-//     updateText: (str: string) => void;
-//     handleAction: () => void;
-// }
-
 
 
 const AddTodo: FC = () => {
 
-    const [text, setText] = useState('')
+    const [text, setText] = useState<string>('')
     const dispatch = useAppDispatch()
 
-    const handleActionChange = (e: any) => {
+    const handleActionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value)
     }
 
@@ -26,7 +19,7 @@ const AddTodo: FC = () => {
         }
     }
 
-    const handleKeyPress = (e: any) => {
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if(e.key === 'Enter') {
             handleAction()
         }
