@@ -14,7 +14,7 @@ const AddTodo: FC = () => {
 
     const handleAction = () => {
         if(text.trim().length) {
-            dispatch(addTodo(text))
+            dispatch(addTodo({date: new Date().toISOString(), text}))
             setText('')
         }
     }
