@@ -22,7 +22,7 @@ const TodoItem: FC<TodoItemProps> = ({ id, title, completed}) => {
             />
             <span className="pseudocheckbox"></span>
             </label>
-            <span className={`${completed ? 'completed' : ''}`}>{title}</span>
+            <span data-testid="value-title" className={`${completed ? 'completed' : ''}`}>{title}</span>
             <span className="remove_todo" onClick={() => dispatch(removeTodo(id))}>&times;</span>
         </li>
     )

@@ -27,7 +27,7 @@ const AddTodo: FC = () => {
 
     return (
         <label>
-            <button className="button_addTodo" onClick = {handleAction}></button>
+            <button data-testid="value-addTodo" className="button_addTodo" onClick = {handleAction}></button>
             <input 
                 type="text"
                 placeholder="new todo"
